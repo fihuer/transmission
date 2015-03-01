@@ -5,7 +5,7 @@ MAINTAINER Romain Fihue <romain.fihue@gmail.com>
 RUN apt-get update
 RUN apt-get install -y transmission-daemon
 
-RUN mkdir /downloaded /incomplete /torrent
+RUN mkdir -p /downloaded /incomplete /torrent /root/.config/transmission-daemon/resume/
 RUN ln -s /dev/stdout /var/log/transmission.log
 VOLUME ["/downloaded", "/torrent", "/incomplete"]
 
