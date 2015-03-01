@@ -25,7 +25,7 @@ function run
 	echo "Incomplete Dir : ${incomplete_dir}"
 	echo "Torrent Dir : ${torrent_dir}"
 	echo "Resume Dir : ${resume_dir}"
-	docker run --rm -dt -P -v ${resume_dir}:/root/.config/transmission-daemon/ -v $download_dir:/downloaded -v $incomplete_dir:/incomplete -v $torrent_dir:/torrent aimnor/transmission $1
+	docker run -dt -P -v ${resume_dir}:/root/.config/transmission-daemon/ -v $download_dir:/downloaded -v $incomplete_dir:/incomplete -v $torrent_dir:/torrent aimnor/transmission $1
 }
 
 
