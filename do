@@ -20,10 +20,12 @@ function run
 	download_dir=/opt/transmission/download
 	incomplete_dir=/opt/transmission/incomplete
 	torrent_dir=/opt/transmission/torrent
+	resume_dir=/opt/transmission/resume
 	echo "Download Dir : ${download_dir}"
 	echo "Incomplete Dir : ${incomplete_dir}"
 	echo "Torrent Dir : ${torrent_dir}"
-	docker run --rm -t -P -v $download_dir:/downloaded -v $incomplete_dir:/incomplete -v $torrent_dir:/torrent aimnor/transmission $1
+	echo "Resume Dir : ${resume_dir}"
+	docker run --rm -t -P -v ${resume_dir}:/root/.config/transmission-daemon/resume/ -v $download_dir:/downloaded -v $incomplete_dir:/incomplete -v $torrent_dir:/torrent aimnor/transmission $1
 }
 
 

@@ -7,7 +7,7 @@ RUN apt-get install -y transmission-daemon
 
 RUN mkdir -p /downloaded /incomplete /torrent /root/.config/transmission-daemon/resume/
 RUN ln -s /dev/stdout /var/log/transmission.log
-VOLUME ["/downloaded", "/torrent", "/incomplete"]
+VOLUME ["/downloaded", "/torrent", "/incomplete", "/root/.config/transmission-daemon/resume/"]
 
 EXPOSE 6881 9091
 
